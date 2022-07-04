@@ -56,9 +56,13 @@ class TextApi extends React.Component {
                                     <pre>
                                         <code>
 {`{
-    "content": "你好，这是一条测度消息",
-    "type": "text",
-    "robotId": "${robotInfo.id}"
+    "msgContent": {
+        "content":"213",
+        "mentioned_mobile_list":["@all"]
+        //content为内容，mentioned_mobile_list为提醒的人电话号码或者@all
+    },
+    "msgType": "text",
+    "robotId": ${robotInfo.id}
 }`}
                                         </code>
                                     </pre>

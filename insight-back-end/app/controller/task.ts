@@ -73,7 +73,6 @@ export default class RobotController extends Controller {
     const { robotId, msgType, msgContent, suite, remark, cron, cronText, isWorkday,TextApiValue } = ctx.request.body;
     if (Util.emptyVaild(robotId, msgType, msgContent, cron, cronText, isWorkday)) return ctx.body = Msg.error('数据不能为空');
     if (!isWorkday && Util.emptyVaild(cron, cronText)) return ctx.body = Msg.error('数据不能为空');
-
     const params = {
       userId: Util.getUserId(ctx),
       robotId, msgType, msgContent, cron, cronText, isWorkday,
@@ -139,18 +138,19 @@ export default class RobotController extends Controller {
   //外部API调用
   public async textApi() {
     const {ctx} = this;
-    const { robotId,type,content,suite,remark } = ctx.request.body;
+    var { robotId,msgType='text',msgContent,suite='',remark=msgContent.content } = ctx.request.body;
     //发送消息
     let sendStatus;
+    msgContent = JSON.stringify(msgContent);
     try {
-      sendStatus = await ctx.service.cron.sendWechart(robotId, type, content, suite, '0', Util.getUserId(ctx), -1, remark);
+      sendStatus = await ctx.service.cron.sendWechart(robotId, msgType, msgContent, suite, '2', '1', -1, remark);
     } catch (error) {
       return ctx.body = Msg.error('消息发送成功但是写入数据库失败，可能是内容太长了');
     }
 
     if (!sendStatus) return ctx.body = Msg.error('API调用异常');
     //返回正常信息
-    ctx.body = Msg.success({code:'0',msg:'外部API调用成功'});
+    ctx.body = Msg.success();
 
   }
 

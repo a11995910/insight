@@ -129,7 +129,7 @@ export default class Cron extends Service {
             robotId,
             taskId,
             userId,
-            methond, // 0 手动 1 自动
+            methond, // 0 手动 1 自动 2调用
             msgContent,
             msgType,
             remark,

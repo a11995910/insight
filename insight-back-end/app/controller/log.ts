@@ -15,7 +15,7 @@ export default class LogController extends Controller {
       order: {
         createDate: 'DESC',
       },
-      take: 520,
+      take: 250,
     };
     const list = await ctx.repo.Log.find(filter);
     ctx.body = Msg.success(list);
