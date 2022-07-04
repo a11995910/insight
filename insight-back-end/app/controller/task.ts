@@ -136,4 +136,22 @@ export default class RobotController extends Controller {
     ctx.body = Msg.success();
   }
 
+  //外部API调用
+  public async textApi() {
+    const {ctx} = this;
+    const { robotId,type,content,suite,remark } = ctx.request.body;
+    //发送消息
+    let sendStatus;
+    try {
+      sendStatus = await ctx.service.cron.sendWechart(robotId, type, content, suite, '0', Util.getUserId(ctx), -1, remark);
+    } catch (error) {
+      return ctx.body = Msg.error('消息发送成功但是写入数据库失败，可能是内容太长了');
+    }
+
+    if (!sendStatus) return ctx.body = Msg.error('API调用异常');
+    //返回正常信息
+    ctx.body = Msg.success({code:'0',msg:'外部API调用成功'});
+
+  }
+
 }

@@ -31,7 +31,7 @@ class TaskStore {
 
   @observable publishCustomizeCron = '' // 发布自定义cron表达式
 
-  @observable publishModel = 0 // 发布模式 0: 即时消息 1:定时消息
+  @observable publishModel = 0 // 发布模式 0: 即时消息 1:定时消息 2:外部调用
 
   @observable publishMentionValue = '' // 发布提醒列表字段
 

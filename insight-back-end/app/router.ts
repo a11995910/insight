@@ -21,13 +21,16 @@ export default (app: Application) => {
   router.post('/api/task/updateTask', authLogin, authPermission, controller.task.updateTask);          // 任务修改
   router.post('/api/task/removeTask', authLogin, authPermission, controller.task.removeTask);          // 任务删除
 
+  
+  router.post('/api/task/publish',controller.task.textApi)  //外部调用API
+
   router.get('/api/log/getLog', authLogin, authPermission, controller.log.getLog);                     // 日志查询
 
   router.get('/api/permission/getPermission', authLogin, authPermission, controller.permission.getPermission);                     // 权限查询
   router.post('/api/permission/createPermission', authLogin, authPermission, controller.permission.createPermission);              // 权限创建
   router.post('/api/permission/removePermission', authLogin, authPermission, controller.permission.removePermission);              // 权限删除
 
-  router.get('/',controller.html.robotIndex);
-  router.get('/login',controller.html.robotIndex);
-  router.get('/Register',controller.html.robotIndex);
+  router.get('/',controller.html.robotIndex);  // 机器人首页
+  router.get('/login',controller.html.robotIndex);  // 机器人登陆
+  router.get('/Register',controller.html.robotIndex);  // 机器人注册
 };

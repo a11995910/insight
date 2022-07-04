@@ -10,6 +10,7 @@ import MsgMarkdown from './MsgMarkdown';
 import MsgImage from './MsgImage';
 import MsgNews from './MsgNews';
 import Timing from './Timing';
+import TextApi from './TextApi';
 import Tab from '../Tab';
 
 import './index.less';
@@ -32,6 +33,7 @@ class TaskForm extends React.Component {
     this.state = {
       isSendLoading: false,
       isTaskLoading: false,
+      isAPIsendLoading: false,
       isTextApi:false,
       ApiBody:''
     };
@@ -161,6 +163,11 @@ class TaskForm extends React.Component {
       };
       this.createTask({ ...params, ...timing }, { ...paramsText, ...timing }, isRepeat);
     }
+    //外部API调用
+    if (publishModel === 2) {
+      if (!TextApiValue) { this.props.CommonStore.alertMessage('error', '记得选一个API哈'); return; }
+      this.createTask({ ...params, TextApiValue }, { ...paramsText, TextApiValue }, isRepeat);
+    }
   }
 
   // 发送即时消息
@@ -239,6 +246,9 @@ class TaskForm extends React.Component {
             {/* 定时模块 */}
             {publishModel === 1 ? (<Timing />) : null}
 
+            {/* 外部API生成模块 */}
+            {publishModel === 2 ? (<TextApi />) : null}
+
             {/* 文本消息来源是否开启接口数据获取，如果开启，显示API接口输入框  */ }
             {msgTypeValue === 'text' ? (
               <div className='d-flex justify-content-between align-items-center f-18'>
@@ -302,9 +312,8 @@ class TaskForm extends React.Component {
                 {message.status === 1 ? (<div>{message.type === 'success' ? (<span className="f-14 text-green">{message.content}</span>) : (<span className="f-14 text-red">{message.content}</span>)}</div>) : ''}
               </div>
               <div className="text-right">
-                {publishModel === 0
-                  ? (<Button className="btn-main" loading={isSendLoading} onClick={() => { return this.handleSubmit(); }}>立即发送</Button>)
-                  : (<Button className="btn-main" loading={isTaskLoading} onClick={() => { return this.handleSubmit(); }}>定时发送</Button>)}
+                {publishModel === 0 ? (<Button className="btn-main" loading={isSendLoading} onClick={() => { return this.handleSubmit(); }}>立即发送</Button>):''}
+                {publishModel === 1 ? (<Button className="btn-main" loading={isTaskLoading} onClick={() => { return this.handleSubmit(); }}>定时发送</Button>):''}
               </div>
             </div>
           </div>

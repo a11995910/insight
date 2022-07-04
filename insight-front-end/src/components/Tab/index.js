@@ -31,6 +31,7 @@ class Tab extends React.Component {
         <div>
           <div className={publishModel === 0 ? 'card-title-item title-item-active ' : 'card-title-item'} onClick={() => { return this.props.TaskStore.selectModel(0); }}>即时消息</div>
           <div className={publishModel === 1 ? 'card-title-item title-item-active ' : 'card-title-item'} onClick={() => { return this.props.TaskStore.selectModel(1); }}>定时消息</div>
+          <div className={publishModel === 2 ? 'card-title-item title-item-active ' : 'card-title-item'} onClick={() => { return this.props.TaskStore.selectModel(2); }}>外部调用</div>
         </div>
         <div>
           <Select
