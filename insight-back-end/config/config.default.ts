@@ -17,11 +17,11 @@ export default (appInfo: EggAppInfo) => {
 
   config.typeorm = {
     type: 'mysql',
-    host: 'localhost',   // mysql数据库地址
+    host: '192.168.0.129',   // mysql数据库地址
     port: 3306,             // mysql数据库端口
-    username: 'root',    // 用户名
+    username: 'robot',    // 用户名
     password: '1q@W#E$R', // 密码
-    database: 'insight',    // 数据库
+    database: 'robot',    // 数据库
     synchronize: true,
     logging: true,
     entities: [ 'app/entity/**/*.ts' ],

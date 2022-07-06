@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { Icon, Modal, message,Button } from 'antd';
+import { message,Button } from 'antd';
 import './TextApi.less';
 
 @inject('TaskStore', 'RobotStore')
