@@ -2,7 +2,7 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportHtml = require('../../../app/controller/html');
+import ExportHtml from '../../../app/controller/html';
 import ExportLog from '../../../app/controller/log';
 import ExportPermission from '../../../app/controller/permission';
 import ExportRobot from '../../../app/controller/robot';
