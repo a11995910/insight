@@ -29,6 +29,8 @@ class Home extends React.Component {
       this.props.TaskStore.getTaskList(params);
       this.props.LogStore.getLogList(params);
       this.props.TaskStore.getCron();
+    }).catch(()=>{
+      this.props.history.push('/login');
     });
   }
 
