@@ -116,7 +116,7 @@ export default class Cron extends Service {
             text = await ctx.service.suite.suiteA(JSON.parse(msgContent));
         }
         if (suite === 'suiteB') {
-            text = await ctx.service.suite.suiteA(JSON.parse(msgContent));
+            text = await ctx.service.suite.suiteB(JSON.parse(msgContent));
         }
 
         // 查找企业微信机器人地址 

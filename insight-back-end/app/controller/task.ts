@@ -29,12 +29,12 @@ export default class RobotController extends Controller {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
         },
+        timeout: 50000,
       });
       if(result.status == 200||202||201){
-        //
         //msgContent处理成json
         msgContent = JSON.parse(msgContent);
-        let data = eval('('+ result.data +')').data;
+        let data = eval('('+ result.data +')');
         //将data这个json展开成字符串 递归深度无穷
         let str = '';
         function deep(data){
