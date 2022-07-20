@@ -43,7 +43,7 @@ export default class Cron extends Service {
                     //
                     //msgContent处理成json
                     taskInfo.msgContent = JSON.parse(taskInfo.msgContent);
-                    let data = eval('('+ result.data +')').data;
+                    let data = eval('('+ result.data +')');
                     //将data这个json展开成字符串 递归深度无穷
                     let str = '';
                     function deep(data){

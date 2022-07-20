@@ -1,36 +1,9 @@
 [📖使用文档](https://github.com/Elliottssu/insight/wiki/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3) | [❓常见问题](https://github.com/Elliottssu/insight/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98) | [💙创作历程](https://www.jianshu.com/p/83ddd46b3d5d)
 
-<h2 align="center">
-    <img src="https://upload-images.jianshu.io/upload_images/3502567-134d75146e2f2a31.png" alt="Insight" height="40">
-</h2>
-<h4 align="center">
-    最科幻的企业微信群机器人管理工具
-</h4>
-<p align="center">
-    非常方便的发布群即时消息和定时消息，解放双手，提升沟通效率
-</p>
-
-[![Version](https://img.shields.io/github/package-json/v/Elliottssu/insight)](https://github.com/Elliottssu/insight)
-[![Issues](https://img.shields.io/github/issues/Elliottssu/insight)](https://github.com/Elliottssu/insight/issues)
-[![License](https://img.shields.io/github/license/Elliottssu/insight)](https://github.com/Elliottssu/insight/blob/master/LICENSE)
-
-![insight 预览](https://upload-images.jianshu.io/upload_images/3502567-6c6527d1709f03d8.png)
-
-
-## 在线体验
-
-⚠️ 因为下方域名到期，暂停使用，大家可以自行部署。
-insight官网：[http://insight.charmculture.com](http://insight.charmculture.com)。
-
-注意：此网站仅供demo测试，你也可以暂时将自己的机器人放在这里。
 
 ## 部署教程
 这个是在nginx上部署此工程的使用参考教程：[从0到1，Nginx部署Nodejs+React教程](https://www.jianshu.com/p/5af19b772948)
 
-## 更新日志
-1. `2022.02.13` 添加2022节假日，感谢[hrpinfzu:hrp](https://github.com/elliottssu/insight/pull/15)的代码贡献  
-2. `2021.03.05` 支持自定义Cron表达式，感谢[hrpinfzu:hrp](https://github.com/elliottssu/insight/pull/12)的代码贡献
-3. `2020.12.23` 后台添加[2021年节假日](http://www.gov.cn/zhengce/content/2020-11/25/content_5564127.htm)
 
 ## 快速启动
 
@@ -50,7 +23,7 @@ npm run dev
 
 访问http://localhost:3000 即可启动。
 
-前后端使用的是React+Nodejs，数据库默认为Mysql测试库，您可以进入`insight-back-end/config`文件夹下，修改为自己的Mysql配置。
+前后端使用的是React+Nodejs，数据库默认为Mysql测试库，您进入`insight-back-end/config`文件夹下，修改为自己的Mysql配置。
 
 ## Insight是什么？
 
@@ -68,7 +41,6 @@ Insight是一个**可以管理企业微信群机器人的小工具，在这里�
 6. 支持移动端布局，支持集成到企业微信控制台。
 7. 消息支持自定义Cron表达式。
 
-您可以继续阅读详细的[使用文档](https://github.com/Elliottssu/insight/wiki/%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3)，解锁更多功能。
 
 ## 技术栈
 
@@ -90,15 +62,3 @@ Insight是一个**可以管理企业微信群机器人的小工具，在这里�
 6. 如何部署？
 ...
 
-想知道这些问题的答案？点击[常见问题](https://github.com/Elliottssu/insight/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)，了解更多。
-
-## 👨🏻‍💻👩🏻‍💻交流群
-我们会活跃在社区和交流群，可以在里面解答问题、探讨功能需求以及技术方案等等。您可以通过下面两种方式和我们沟通：
-1. [🍔Insight社区](https://support.qq.com/products/113180)
-2. [ 😈Github Issues](https://github.com/Elliottssu/insight/issues)
-
-## 贡献
-非常欢迎大家提出改进优化建议，所有合理的改动、优化、修正，新的组件，或者文档的修正、更新 相关的提交都会被接收。
-
-## 关于
-想了解“科幻”是怎样来的？这里有一份背后的故事分享，我们的[创作历程](https://www.jianshu.com/p/83ddd46b3d5d)😉。
